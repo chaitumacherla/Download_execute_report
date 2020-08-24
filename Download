@@ -4,6 +4,7 @@ import requests
 
 def download(url):
     get_response = requests.get(url)
-    print(get_response.content)
+    with open(test,"wb") as out_file:
+         out_file.write(get_response.content)
 
 download("<url>")
