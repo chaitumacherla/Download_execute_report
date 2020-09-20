@@ -1,5 +1,11 @@
 #!usr/bin/env python
 
+import requests
+import subprocess
+import smtplib
+import os
+import tempfile
+
 def download(url):
     get_response = requests.get(url)
     file_name=url.split("/")[-1]
