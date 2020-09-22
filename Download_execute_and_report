@@ -13,7 +13,7 @@ def download(url):
          out_file.write(get_response.content)
 
 
-def send mail(emial,password,message):
+def send mail(email,password,message):
     server=smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()
     server.login(email,password)
